@@ -13,7 +13,10 @@ class LoadingScreen extends StatefulWidget {
 
 class _LoadingScreenState extends State<LoadingScreen> {
 
-  var url=Uri.parse('https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=minutely,hourly,daily,alert&appid=3d94cda811980c81b4e170fff8e3396b');
+  double latitude=0.0;
+  double longitude=0.0;
+
+
 
   void initState(){
     super.initState();
@@ -23,9 +26,15 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void getLocation() async{
     Location location=Location();
     await location.getCurrentLocation();
+    this.latitude=location.latitude;
+    this.longitude=location.longitude;
+
+    getData();
   }
 
   void getData() async{
+
+    var url=Uri.parse('https://api.openweathermap.org/data/2.5/onecall?lat=$latitude&lon=$longitude&exclude=minutely,hourly,daily,alert&appid=3d94cda811980c81b4e170fff8e3396b');
     Response response = await get(url);
     if(response.statusCode==200){
       String data =response.body;
@@ -46,7 +55,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    getData();
+
     return Scaffold(
 
     );
