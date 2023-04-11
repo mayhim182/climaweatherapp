@@ -2,6 +2,8 @@
 
 Location, networking and asynchronous dart programming
 
+11-04-2023 will add json parsing and dynamic types.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
