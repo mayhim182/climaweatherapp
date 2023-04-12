@@ -77,3 +77,10 @@ class _LocationScreenState extends State<LocationScreen> {
     );
   }
 }
+
+
+//
+// var weatherDesc=weatherData['current']['weather'][0]['description'];
+// var temperature=weatherData['current']['temp'];
+// var weatherId=weatherData['current']['weather'][0]['id'];
+// var timeZone=weatherData['timezone'];
