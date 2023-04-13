@@ -29,10 +29,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void getLocationData() async{
     Location location=Location();
     await location.getCurrentLocation();
-    this.latitude=location.latitude;
-    this.longitude=location.longitude;
-
-    NetworkHelper networkHelper=NetworkHelper('https://api.openweathermap.org/data/2.5/onecall?lat=$latitude&lon=$longitude&exclude=minutely,hourly,daily,alert&appid=3d94cda811980c81b4e170fff8e3396b&units=metric');
+    NetworkHelper networkHelper=NetworkHelper('https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&exclude=minutely,hourly,daily,alert&appid=3d94cda811980c81b4e170fff8e3396b&units=metric');
 
     var weatherData=await networkHelper.getData();
 
