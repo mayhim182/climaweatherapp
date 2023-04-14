@@ -1,5 +1,9 @@
 # climaweatherapp
 
+
+To use the app clone the repository in your machine, run flutter pub get, 
+to get the dependencies. 
+
 Location, networking and asynchronous dart programming
 
 11-04-2023 will add json parsing and dynamic types.
